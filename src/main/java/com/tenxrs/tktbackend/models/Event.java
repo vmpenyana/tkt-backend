@@ -1,9 +1,11 @@
-package com.tenxrs.Models;
+package com.tenxrs.tktbackend.models;
 
+
+import lombok.Data;
 
 import java.util.Date;
 import java.util.Set;
-
+@Data
 public class Event {
     private String description;
     private Set<Ticket> tickets;

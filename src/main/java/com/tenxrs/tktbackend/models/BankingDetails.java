@@ -1,4 +1,4 @@
-package com.tenxrs.Models;
+package com.tenxrs.tktbackend.models;
 
 import lombok.*;
 

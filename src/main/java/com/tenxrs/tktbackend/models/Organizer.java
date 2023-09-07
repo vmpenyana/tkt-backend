@@ -1,5 +1,8 @@
-package com.tenxrs.Models;
+package com.tenxrs.tktbackend.models;
 
+import lombok.Data;
+
+@Data
 public class Organizer {
     private String organizer;
     private String emailAddress;
