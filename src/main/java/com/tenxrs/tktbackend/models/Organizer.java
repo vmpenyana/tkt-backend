@@ -3,6 +3,8 @@ package com.tenxrs.tktbackend.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name = "organizers")
@@ -17,5 +19,7 @@ public class Organizer {
     private long cellNumber;
     @OneToOne
     private BankingDetails bankingDetails;
+    @OneToMany(mappedBy = "organizer")
+    private Set<Event> events;
 
 }

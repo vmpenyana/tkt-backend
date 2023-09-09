@@ -5,13 +5,14 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "tickets")
 public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-//    private Event event;
+    @ManyToOne
+    private Event event;
     @ManyToOne
     private Customer customer;
     private double price;
