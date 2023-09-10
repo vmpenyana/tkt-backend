@@ -2,12 +2,15 @@ package com.tenxrs.tktbackend.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.Cascade;
 
 import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "organizers")
+@EqualsAndHashCode(exclude = {"bankingDetails", "events"})
 public class Organizer {
 
     @Id
@@ -19,7 +22,7 @@ public class Organizer {
     private long cellNumber;
     @OneToOne
     private BankingDetails bankingDetails;
-    @OneToMany(mappedBy = "organizer")
+    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
     private Set<Event> events;
 
 }

@@ -3,12 +3,14 @@ package com.tenxrs.tktbackend.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 import java.util.Set;
 @Data
 @Entity
 @Table(name = "events")
+@EqualsAndHashCode(exclude = {"tickets", "organizer"})
 public class Event {
 
 
