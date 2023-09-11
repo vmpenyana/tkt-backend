@@ -5,6 +5,7 @@ import com.tenxrs.tktbackend.services.bankingDetails.BankingDetailsService;
 import com.tenxrs.tktbackend.services.customer.CustomerService;
 import com.tenxrs.tktbackend.services.event.EventsService;
 import com.tenxrs.tktbackend.services.organizer.OrganizersService;
+import com.tenxrs.tktbackend.services.sale.SaleService;
 import com.tenxrs.tktbackend.services.ticket.TicketService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -22,12 +23,15 @@ public class Runner implements CommandLineRunner {
 
     private final TicketService ticketService;
 
+    private final SaleService saleService;
+
     private final BankingDetailsService bankingDetailsService;
-    public Runner(EventsService eventsService, OrganizersService organizersService, CustomerService customerService, TicketService ticketService, BankingDetailsService bankingDetailsService) {
+    public Runner(EventsService eventsService, OrganizersService organizersService, CustomerService customerService, TicketService ticketService, SaleService saleService, BankingDetailsService bankingDetailsService) {
         this.eventsService = eventsService;
         this.organizersService = organizersService;
         this.customerService = customerService;
         this.ticketService = ticketService;
+        this.saleService = saleService;
         this.bankingDetailsService = bankingDetailsService;
     }
 
@@ -88,6 +92,12 @@ public class Runner implements CommandLineRunner {
         organizer.setBankingDetails(bankingDetails);
 
         organizersService.save(organizer);
+
+        Sale sale = new Sale();
+
+        sale.setEvent(event);
+
+        saleService.record(sale);
 
 
 
