@@ -20,9 +20,19 @@ public class Organizer {
     private String name;
     private String emailAddress;
     private long cellNumber;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private BankingDetails bankingDetails;
     @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
     private Set<Event> events;
 
+    @Override
+    public String toString() {
+        return "Organizer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", cellNumber=" + cellNumber +
+                ", bankingDetails=" + bankingDetails +
+                '}';
+    }
 }

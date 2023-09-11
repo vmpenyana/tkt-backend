@@ -30,4 +30,15 @@ public class Event {
     @OneToMany(mappedBy = "event")
     private Set<Sale> sales;
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", venue='" + venue + '\'' +
+                ", time=" + time +
+                ", date=" + date +
+                ", province='" + province + '\'' +
+                '}';
+    }
 }

@@ -1,4 +1,4 @@
-package com.tenxrs.tktbackend.services;
+package com.tenxrs.tktbackend.services.organizer;
 
 import com.tenxrs.tktbackend.models.Organizer;
 import com.tenxrs.tktbackend.repositories.OrganizerRepository;

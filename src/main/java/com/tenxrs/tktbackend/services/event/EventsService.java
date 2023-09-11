@@ -1,4 +1,4 @@
-package com.tenxrs.tktbackend.services;
+package com.tenxrs.tktbackend.services.event;
 
 import com.tenxrs.tktbackend.models.Event;
 
