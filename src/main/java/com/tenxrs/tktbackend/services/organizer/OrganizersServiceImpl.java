@@ -17,4 +17,19 @@ public class OrganizersServiceImpl implements OrganizersService {
     public Organizer save(Organizer organizer) {
         return organizerRepository.save(organizer);
     }
+
+    @Override
+    public Organizer findById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public void delete(Organizer object) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
+    }
 }

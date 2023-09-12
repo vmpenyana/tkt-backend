@@ -27,4 +27,24 @@ public class TicketServiceImpl implements TicketService {
     public ArrayList<Ticket> getTicketsByCustomer(Customer customer) {
         return new ArrayList<>(ticketRepository.findTicketsByCustomer(customer));
     }
+
+    @Override
+    public Ticket save(Ticket object) {
+        return null;
+    }
+
+    @Override
+    public Ticket findById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public void delete(Ticket object) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
+    }
 }

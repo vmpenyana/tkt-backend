@@ -13,7 +13,22 @@ public class BankingDetailsServiceImpl implements BankingDetailsService {
     }
 
     @Override
-    public BankingDetails save(BankingDetails bankingDetails) {
-        return bankingDetailsRepository.save(bankingDetails);
+    public BankingDetails save(BankingDetails object) {
+        return null;
+    }
+
+    @Override
+    public BankingDetails findById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public void delete(BankingDetails object) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
     }
 }

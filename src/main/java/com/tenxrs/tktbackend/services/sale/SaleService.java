@@ -1,7 +1,7 @@
 package com.tenxrs.tktbackend.services.sale;
 
 import com.tenxrs.tktbackend.models.Sale;
+import com.tenxrs.tktbackend.services.CrudService;
 
-public interface SaleService {
-    Sale record(Sale sale);
+public interface SaleService extends CrudService<Sale, Long> {
 }

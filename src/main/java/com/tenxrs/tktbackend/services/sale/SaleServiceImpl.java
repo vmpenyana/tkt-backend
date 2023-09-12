@@ -14,7 +14,22 @@ public class SaleServiceImpl implements SaleService {
     }
 
     @Override
-    public Sale record(Sale sale) {
-        return saleRepository.save(sale);
+    public Sale save(Sale object) {
+        return null;
+    }
+
+    @Override
+    public Sale findById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public void delete(Sale object) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
     }
 }
