@@ -23,17 +23,17 @@ public class EventsServiceImpl implements EventsService {
     }
 
     @Override
-    public Event findById(Long aLong) {
-        return null;
+    public Event findById(Long id) {
+        return eventRepository.findById(id).orElse(null);
     }
 
     @Override
     public void delete(Event object) {
-
+        eventRepository.delete(object);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        eventRepository.deleteById(id);
     }
 }

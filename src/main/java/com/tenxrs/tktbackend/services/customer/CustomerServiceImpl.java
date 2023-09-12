@@ -19,22 +19,17 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer findById(Long aLong) {
-        return null;
+    public Customer findById(Long id) {
+        return customerRepository.findById(id).orElse(null);
     }
 
     @Override
     public void delete(Customer object) {
-
+        customerRepository.delete(object);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
-    }
-
-    @Override
-    public Customer findCustomerById(Long id) {
-        return customerRepository.findById(id).orElse(null);
+    public void deleteById(Long id) {
+        customerRepository.deleteById(id);
     }
 }

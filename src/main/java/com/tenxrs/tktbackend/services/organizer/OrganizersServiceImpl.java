@@ -19,17 +19,17 @@ public class OrganizersServiceImpl implements OrganizersService {
     }
 
     @Override
-    public Organizer findById(Long aLong) {
-        return null;
+    public Organizer findById(Long id) {
+        return organizerRepository.findById(id).orElse(null);
     }
 
     @Override
     public void delete(Organizer object) {
-
+        organizerRepository.delete(object);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        organizerRepository.deleteById(id);
     }
 }

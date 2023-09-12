@@ -30,21 +30,21 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public Ticket save(Ticket object) {
-        return null;
+        return ticketRepository.save(object);
     }
 
     @Override
-    public Ticket findById(Long aLong) {
-        return null;
+    public Ticket findById(Long id) {
+        return ticketRepository.findById(id).orElse(null);
     }
 
     @Override
     public void delete(Ticket object) {
-
+        ticketRepository.delete(object);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        ticketRepository.deleteById(id);
     }
 }
