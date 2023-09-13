@@ -16,6 +16,5 @@ public class BankingDetails {
     private long accountNumber;
     private int branchCode;
     private String accountHolder;
-    @OneToOne
-    private Organizer organizer;
+
 }

@@ -3,14 +3,14 @@ package com.tenxrs.tktbackend.models;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.hibernate.annotations.Cascade;
-
+import lombok.ToString;
 import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "organizers")
 @EqualsAndHashCode(exclude = {"bankingDetails", "events"})
+@ToString(exclude = {"bankingDetails", "events"})
 public class Organizer {
 
     @Id
@@ -24,15 +24,4 @@ public class Organizer {
     private BankingDetails bankingDetails;
     @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
     private Set<Event> events;
-
-    @Override
-    public String toString() {
-        return "Organizer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", cellNumber=" + cellNumber +
-                ", bankingDetails=" + bankingDetails +
-                '}';
-    }
 }

@@ -1,6 +1,7 @@
 package com.tenxrs.tktbackend.services.bankingDetails;
 
 import com.tenxrs.tktbackend.models.BankingDetails;
+import com.tenxrs.tktbackend.models.Organizer;
 import com.tenxrs.tktbackend.repositories.BankingDetailsRepository;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +32,9 @@ public class BankingDetailsServiceImpl implements BankingDetailsService {
     public void deleteById(Long id) {
         bankingDetailsRepository.deleteById(id);
     }
+
+//    @Override
+//    public BankingDetails findBankingDetailsByOrganizer(Organizer organizer) {
+//        return bankingDetailsRepository.findBankingDetailsByOrganizer(organizer);
+//    }
 }
