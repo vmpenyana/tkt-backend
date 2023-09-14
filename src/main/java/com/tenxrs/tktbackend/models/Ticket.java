@@ -16,4 +16,12 @@ public class Ticket {
     @ManyToOne
     private Customer customer;
     private double price;
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", price=" + price +
+                '}';
+    }
 }

@@ -3,12 +3,14 @@ package com.tenxrs.tktbackend.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 import java.util.Set;
 @Data
 @Entity
 @Table(name = "events")
+@EqualsAndHashCode(exclude = {"tickets", "organizer"})
 public class Event {
 
 
@@ -28,4 +30,15 @@ public class Event {
     @OneToMany(mappedBy = "event")
     private Set<Sale> sales;
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", venue='" + venue + '\'' +
+                ", time=" + time +
+                ", date=" + date +
+                ", province='" + province + '\'' +
+                '}';
+    }
 }
