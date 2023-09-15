@@ -1,6 +1,7 @@
 package com.tenxrs.tktbackend.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,23 +23,15 @@ public class Event {
     private Set<Ticket> tickets;
     private String venue;
     //private Image  image;
+    @Temporal(TemporalType.TIME)
     private Date time;
+    @Temporal(TemporalType.DATE)
     private Date date;
     private String province;
     @ManyToOne
+    @JsonIgnore
     private Organizer organizer;
     @OneToMany(mappedBy = "event")
     private Set<Sale> sales;
 
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", venue='" + venue + '\'' +
-                ", time=" + time +
-                ", date=" + date +
-                ", province='" + province + '\'' +
-                '}';
-    }
 }

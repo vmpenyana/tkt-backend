@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
 import java.util.Set;
 
 @Data
@@ -22,6 +23,6 @@ public class Organizer {
     private long cellNumber;
     @OneToOne(cascade = CascadeType.ALL)
     private BankingDetails bankingDetails;
-    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Event> events;
 }
