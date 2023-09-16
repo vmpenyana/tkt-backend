@@ -1,8 +1,11 @@
 package com.tenxrs.tktbackend.services.event;
 
 import com.tenxrs.tktbackend.models.Event;
+import com.tenxrs.tktbackend.models.Organizer;
 import com.tenxrs.tktbackend.repositories.EventRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.Set;
 
 @Service
 public class EventsServiceImpl implements EventsService {
@@ -35,5 +38,10 @@ public class EventsServiceImpl implements EventsService {
     @Override
     public void deleteById(Long id) {
         eventRepository.deleteById(id);
+    }
+
+    @Override
+    public Set<Event> findEventsByOrganizer(Organizer organizer) {
+        return eventRepository.findAllByOrganizer(organizer);
     }
 }
