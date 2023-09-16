@@ -2,7 +2,7 @@ INSERT INTO customers (name, cell_number, email_address) VALUES ('vincent',
                                                                  '0718609225',
                                                                  'vincent@gmail.com');
 
-INSERT INTO tickets (price) VALUES ('750.00');
+INSERT INTO tickets (price, is_valid) VALUES ('750.00', true);
 
 
 

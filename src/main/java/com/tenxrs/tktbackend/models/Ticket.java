@@ -17,11 +17,21 @@ public class Ticket {
     private Customer customer;
     private double price;
 
+    private boolean isValid;
+
     @Override
     public String toString() {
         return "Ticket{" +
                 "id=" + id +
                 ", price=" + price +
                 '}';
+    }
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setValid(boolean valid) {
+        isValid = valid;
     }
 }
